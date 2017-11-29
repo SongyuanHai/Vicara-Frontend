@@ -1,0 +1,31 @@
+.pageCss {
+	/*background-color: #cccccc;*/
+	/* background-image: url('background-image.jpg'); */
+	background-image: url('../image/background_westernacher.png');
+	background-size: 100% 100%;
+}
+
+.logoCss {
+	padding-top: 15%;
+	padding-left: 30%;
+}
+
+.nameInputCss {
+	width: 70% !important;
+	padding-left: 30% !important;
+}
+
+.passwordInputCss {
+	width: 70% !important;
+	padding-left: 30% !important;
+}
+
+.btnCss {
+	width: 60% !important;
+	padding-top: 2% !important;
+	padding-left: 40% !important;
+}
+
+.btnCss>.sapMBtnInner {
+	background: #007cc0;
+}
