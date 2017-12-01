@@ -8,11 +8,14 @@ sap.ui.controller("vicaraapp.ProjMgrHrReporting", {
  * @memberOf vicaraapp.ProjMgrHrReporting
  */
 	onInit: function() {
-		var sURL = "http://127.0.0.1:8000/hourReporting/";
-		//var sURL = "http://services.odata.org/V4/(S(3q5cdlo5xol5mevqq3hw1dgz))/TripPinServiceRW/";
-		var oModel = new sap.ui.model.json.JSONModel(sURL);
+//		var sURL = "http://127.0.0.1:8000/hourReporting/";
+//		//var sURL = "http://services.odata.org/V4/(S(3q5cdlo5xol5mevqq3hw1dgz))/TripPinServiceRW/";
+//		var oModel = new sap.ui.model.json.JSONModel(sURL);
+//		
+//		sap.ui.getCore().setModel(oModel,"table_projMgrHrRep");
 		
-		sap.ui.getCore().setModel(oModel,"table_projMgrHrRep");
+
+
 
 	},
 
@@ -34,9 +37,26 @@ sap.ui.controller("vicaraapp.ProjMgrHrReporting", {
  * 
  * @memberOf vicaraapp.ProjMgrHrReporting
  */
-// onAfterRendering: function() {
-//
-// },
+ onAfterRendering: function() {
+	 $.ajax({
+			method : 'GET',
+			url : 'http://127.0.0.1:8000/api/v1/timesheet/',
+			//crossDomain : true,
+			dataType : 'json',
+			success : function(data) {
+				console.log(data);
+				var oModel = new sap.ui.model.json.JSONModel(data);
+				
+				sap.ui.getCore().setModel(oModel,"table_projMgrHrRep");
+			},
+			error : function(xhr, readyState) {
+				console.log("Error: " + readyState);
+				sap.m.MessageToast
+				.show("Connection failed! Please try again later.");
+			}
+
+		});
+ },
 
 /**
  * Called when the Controller is destroyed. Use this one to free resources and

@@ -104,11 +104,38 @@ sap.ui.jsview("vicaraapp.ProjMgrHrReporting", {
 				text : "{table_projMgrHrRep>work_hour}"
 			})
 		});
+		
+		var oCol9 = new sap.ui.table.Column({
+			label : new sap.m.Label({
+				text : "Project Code"
+			}),
+			template : new sap.m.Text({
+				text : "{table_projMgrHrRep>project_code}"
+			})
+		});
+		
+		var oCol10 = new sap.ui.table.Column({
+			label : new sap.m.Label({
+				text : "Description"
+			}),
+			template : new sap.m.Text({
+				text : "{table_projMgrHrRep>description}"
+			})
+		});
+		
+		var oCol11 = new sap.ui.table.Column({
+			label : new sap.m.Label({
+				text : "Status"
+			}),
+			template : new sap.m.Text({
+				text : "{table_projMgrHrRep>approval_status}"
+			})
+		});
 
 		var oTable = new sap.ui.table.Table({
 			title : "Hour Reporting Table",
 			selectionMode: "None",
-			columns : [ oCol1, oCol2, oCol3, oCol4, oCol5, oCol6, oCol7, oCol8
+			columns : [ oCol1, oCol2, oCol3, oCol4, oCol5, oCol6, oCol7, oCol8, oCol9, oCol10, oCol11
 			]
 		});
 
