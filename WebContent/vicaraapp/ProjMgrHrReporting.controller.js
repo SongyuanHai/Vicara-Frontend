@@ -56,6 +56,7 @@ sap.ui.controller("vicaraapp.ProjMgrHrReporting", {
 			}
 
 		});
+	 
  },
 
 /**

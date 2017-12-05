@@ -27,7 +27,7 @@ sap.ui.jsview("vicaraapp.vicaraApp", {
 
 		// Add name input
 		var oNameInput = new sap.m.Input("idNameInput", {
-			placeholder : "Please enter your name",
+			placeholder : "Please enter your email address",
 		}).addStyleClass("nameInputCss");
 
 		// Add password input
@@ -36,6 +36,13 @@ sap.ui.jsview("vicaraapp.vicaraApp", {
 			placeholder : "Please enter your password",
 			submit : [ oController.validation, oController ]
 		}).addStyleClass("passwordInputCss");
+
+		// Add register link
+		var oUserRegistrationLink = new sap.m.Link("idUserRegistrationLink", {
+			text : "New user? Click here to create new account!",
+			subtle : true,
+			press : [ oController.gotoUserRegistration, oController ]
+		}).addStyleClass("userRegistrationLinkCss");
 
 		// Add submit button
 		var oSubmitButton = new sap.m.Button("idSubmitButton", {
@@ -50,20 +57,21 @@ sap.ui.jsview("vicaraapp.vicaraApp", {
 				text : "© Copyright 2017 Vicara. All Rights Reserved."
 			}) ]
 		});
-		
+
 		// Create company logo image
 
 		var oLogoImage = new sap.m.Image({
 			src : "image/logo_Westernacher.jpg",
-			height: "45px",
-			width: "120px",
+			height : "45px",
+			width : "120px",
 		});
 
 		// Add components to Page
 		var oPage = new sap.m.Page({
 			title : "Welcome",
 			headerContent : oLogoImage,
-			content : [ oLogo, oNameInput, oPasswordInput, oSubmitButton ],
+			content : [ oLogo, oNameInput, oPasswordInput,
+					oUserRegistrationLink, oSubmitButton ],
 			footer : oFooter
 		}).addStyleClass("pageCss");
 

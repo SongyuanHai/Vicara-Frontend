@@ -8,6 +8,7 @@
 .logoCss {
 	padding-top: 15%;
 	padding-left: 30%;
+	color: white !important;
 }
 
 .nameInputCss {
@@ -20,10 +21,21 @@
 	padding-left: 30% !important;
 }
 
+.userRegistrationLinkCss {
+	/*padding-top: 1% !important;*/
+	padding-left: 30% !important;
+	color: #ff704d !important;
+}
+
 .btnCss {
 	width: 60% !important;
-	padding-top: 2% !important;
+	/*padding-top: 2% !important;*/
 	padding-left: 40% !important;
+}
+
+.userRegistrationInputsCss {
+	width: 70% !important;
+	padding-left: 30% !important;
 }
 
 .btnCss>.sapMBtnInner {
