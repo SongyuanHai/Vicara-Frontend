@@ -21,7 +21,7 @@ sap.ui.controller("vicaraapp.ProjectMemberHome", {
 
 		var oGreet = sap.ui.getCore().byId("idGreet_projectMember");
 		oGreet.setText("Welcome Login "
-				+ sap.ui.getCore().byId("idNameInput").getValue())
+				+ sap.ui.getCore().byId("idUserName_projectMember").getText())
 				+ "!";
 
 	},

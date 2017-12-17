@@ -38,11 +38,12 @@ sap.ui.jsview("vicaraapp.vicaraApp", {
 		}).addStyleClass("passwordInputCss");
 
 		// Add register link
-		var oUserRegistrationLink = new sap.m.Link("idUserRegistrationLink", {
-			text : "New user? Click here to create new account!",
-			subtle : true,
-			press : [ oController.gotoUserRegistration, oController ]
-		}).addStyleClass("userRegistrationLinkCss");
+		// var oUserRegistrationLink = new sap.m.Link("idUserRegistrationLink",
+		// {
+		// text : "New user? Click here to create new account!",
+		// subtle : true,
+		// press : [ oController.gotoUserRegistration, oController ]
+		// }).addStyleClass("userRegistrationLinkCss");
 
 		// Add submit button
 		var oSubmitButton = new sap.m.Button("idSubmitButton", {
@@ -70,8 +71,7 @@ sap.ui.jsview("vicaraapp.vicaraApp", {
 		var oPage = new sap.m.Page({
 			title : "Welcome",
 			headerContent : oLogoImage,
-			content : [ oLogo, oNameInput, oPasswordInput,
-					oUserRegistrationLink, oSubmitButton ],
+			content : [ oLogo, oNameInput, oPasswordInput, oSubmitButton ],
 			footer : oFooter
 		}).addStyleClass("pageCss");
 

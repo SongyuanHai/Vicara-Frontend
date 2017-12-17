@@ -39,25 +39,6 @@ sap.ui.controller("vicaraapp.vicaraApp", {
 		// var oModel = new sap.ui.model.json.JSONModel(oData);
 		// sap.ui.getCore().setModel(oModel);
 
-		// $.ajax({
-		// url : "http://127.0.0.1:8000/api/v1/login/",
-		// method : "POST",
-		// dataType : "json",
-		// username : "zzsongyuanhai@gmail.com",
-		// password : "hsy@0922",
-		// cache : false,
-		// crossDomain : true,
-		// contentType : "application/json",
-		// success : function(data, textStatus, jqXHR) {
-		// alert("SUCCESS!");
-		// console.log("SUCCESS");
-		// },
-		// error : function(xhr, readyState) {
-		// alert("ERROR: "+ readyState);
-		// console.log("ERROR: " + readyState);
-		// }
-		// });
-
 	},
 	/**
 	 * Similar to onAfterRendering, but this hook is invoked before the
@@ -69,6 +50,7 @@ sap.ui.controller("vicaraapp.vicaraApp", {
 	// onBeforeRendering: function() {
 	//		 
 	// },
+
 	// Validation function to verify login user name and
 	// password
 	validation : function(oEvt) {
@@ -95,20 +77,42 @@ sap.ui.controller("vicaraapp.vicaraApp", {
 				// crossDomain : true,
 				success : function(data, textStatus, jqXHR) {
 					console.log(data);
+					console.log(data.id);
 					console.log(textStatus);
 					console.log(jqXHR);
+
 					$.ajaxSetup({
 						beforeSend : function(xhr) {
 							xhr.setRequestHeader('Authorization', 'Token '
 									+ data.token);
 						}
 					});
-					app.to("projectManagerHome1");
+
+					user_url = 'http://127.0.0.1:8000/api/v1/profile/'
+							+ data.id + '/';
+					$.ajax({
+						method : 'GET',
+						url : user_url,
+						// crossDomain : true,
+						dataType : 'json',
+						success : function(userData) {
+							console.log(userData);
+							sap.ui.controller("vicaraapp.vicaraApp")
+									.gotoSecondPage(userData);
+
+						},
+						error : function(xhr, readyState) {
+							console.log("Error: " + readyState);
+							console.log("Getting user info error");
+						}
+
+					});
+					// app.to("projectManagerHome1");
 				},
 				error : function(xhr, readyState) {
 					sap.m.MessageToast
 							.show("Username and/or password incorrect!");
-					var oUserName = sap.ui.getCore().byId("idNameInput");			
+					var oUserName = sap.ui.getCore().byId("idNameInput");
 					var oUserPwd = sap.ui.getCore().byId("idPasswordInput");
 					oUserPwd.setValue();
 					oUserName.setValue();
@@ -151,31 +155,26 @@ sap.ui.controller("vicaraapp.vicaraApp", {
 
 	},
 
-	//Go to user registration page
-	gotoUserRegistration : function(oEvt){
-		app.to("UserRegistration1");
-	},
-	
-	
-	
 	// Go to user home page (second page of app) by different
 	// role of user
 	gotoSecondPage : function(oAccount) {
-
-		var oInputName = sap.ui.getCore().byId("idNameInput").getValue();
-
-		if (oAccount.Role === "ProjectMember") {
+		oInputName = oAccount.first_name;
+		if (oAccount.role === "Project Member") {
 			var oLabel = sap.ui.getCore().byId("idUserName_projectMember");
 			oLabel.setText(oInputName);
 			app.to("projectMemberHome1");
-		} else if (oAccount.Role === "ProjectManager") {
+		} else if (oAccount.role === "Project Manager") {
 			var oLabel = sap.ui.getCore().byId("idUserName_projectManager");
 			oLabel.setText(oInputName);
 			app.to("projectManagerHome1");
-		} else if (oAccount.Role === "ConsultingManager") {
-			var oLabel = sap.ui.getCore().byId("idUserName_projectManager");
+		} else if (oAccount.role === "Consulting Manager") {
+			var oLabel = sap.ui.getCore().byId("idUserName_ConsutingManager");
 			oLabel.setText(oInputName);
 			app.to("consultingManagerHome1");
+		} else if (oAccount.role === "Admin") {
+			var oLabel = sap.ui.getCore().byId("idUserName_admin");
+			oLabel.setText(oInputName);
+			app.to("adminHome1");
 		} else {
 			sap.m.MessageToast.show("Limit of authority");
 		}

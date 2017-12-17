@@ -38,6 +38,18 @@
 		type : sap.ui.core.mvc.ViewType.JS
 	});
 	
+	var adminHome = sap.ui.view({
+		id : "adminHome1",
+		viewName : "vicaraapp.AdminHome",
+		type : sap.ui.core.mvc.ViewType.JS
+	});
+	
+	var adminMaintainUser = sap.ui.view({
+		id : "adminMaintainUser1",
+		viewName : "vicaraapp.AdminMaintainUser",
+		type : sap.ui.core.mvc.ViewType.JS
+	});
+	
 	var ProjMgrHrReporting = sap.ui.view({
 		id : "ProjMgrHrReporting1",
 		viewName : "vicaraapp.ProjMgrHrReporting",
@@ -55,6 +67,8 @@
 	app.addPage(projectMemberHome);
 	app.addPage(projectManagerHome);
 	app.addPage(consultingManagerHome);
+	app.addPage(adminHome);
+	app.addPage(adminMaintainUser);
 	app.addPage(ProjMgrHrReporting);
 	app.addPage(UserRegistration);
 	app.placeAt("content");

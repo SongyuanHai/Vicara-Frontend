@@ -24,10 +24,13 @@ sap.ui.controller("vicaraapp.UserRegistration",
 				var oEmployeeID = sap.ui.getCore().byId("idEmployeeIDInput")
 						.getValue();
 				var oEmail = sap.ui.getCore().byId("idEmail2Input").getValue();
-				var oPassword = sap.ui.getCore().byId("idPassword2Input").getValue();
-				var oRole = sap.ui.getCore().byId("idRoleInput").getSelectedItem().getText();
-				var oLevel = sap.ui.getCore().byId("idLevelInput").getSelectedItem().getText();
-				console.log(oEmail+"-----"+oRole + "-----" + oLevel);
+				var oPassword = sap.ui.getCore().byId("idPassword2Input")
+						.getValue();
+				var oRole = sap.ui.getCore().byId("idRoleInput")
+						.getSelectedItem().getText();
+				var oLevel = sap.ui.getCore().byId("idLevelInput")
+						.getSelectedItem().getText();
+				console.log(oEmail + "-----" + oRole + "-----" + oLevel);
 
 				if (oMiddleName !== undefined && oMiddleName === "") {
 					oMiddleName = "N/A";
@@ -43,7 +46,7 @@ sap.ui.controller("vicaraapp.UserRegistration",
 					sap.m.MessageToast
 							.show("Please enter all required fields!");
 				} else {
-					
+
 					var submitData = {
 						email : oEmail,
 						first_name : oFirstName,
@@ -62,8 +65,31 @@ sap.ui.controller("vicaraapp.UserRegistration",
 						// dataType : 'json',
 						// crossDomain : true,
 						success : function(data, textStatus, jqXHR) {
-							sap.m.MessageToast
-							.show("Create success!");
+							sap.m.MessageToast.show("Create success!");
+							var oFirstName = sap.ui.getCore().byId(
+									"idFirstNameInput");
+							var oMiddleName = sap.ui.getCore().byId(
+									"idMiddleNameInput");
+							var oLastName = sap.ui.getCore().byId(
+									"idLastNameInput");
+							var oEmployeeID = sap.ui.getCore().byId(
+									"idEmployeeIDInput");
+							var oEmail1 = sap.ui.getCore()
+									.byId("idEmail1Input");
+							var oEmail2 = sap.ui.getCore()
+									.byId("idEmail2Input");
+							var oPassword1 = sap.ui.getCore().byId(
+									"idPassword1Input");
+							var oPassword2 = sap.ui.getCore().byId(
+									"idPassword2Input");
+							oFirstName.setValue();
+							oMiddleName.setValue();
+							oLastName.setValue();
+							oEmployeeID.setValue();
+							oEmail1.setValue();
+							oEmail2.setValue();
+							oPassword1.setValue();
+							oEmail2.setValue();
 							app.back();
 							console.log(data);
 							console.log(textStatus);
