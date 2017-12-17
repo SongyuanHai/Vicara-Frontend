@@ -50,14 +50,26 @@
 		type : sap.ui.core.mvc.ViewType.JS
 	});
 	
+	var adminMaintainProjectMaster = sap.ui.view({
+		id : "adminMaintainProjectMaster1",
+		viewName : "vicaraapp.AdminMaintainProjectMaster",
+		type : sap.ui.core.mvc.ViewType.JS
+	});
+	
+	var ProjectMasterRegistration = sap.ui.view({
+		id : "projectMasterRegistration1",
+		viewName : "vicaraapp.ProjectMasterRegistration",
+		type : sap.ui.core.mvc.ViewType.JS
+	});
+	
 	var ProjMgrHrReporting = sap.ui.view({
-		id : "ProjMgrHrReporting1",
+		id : "projMgrHrReporting1",
 		viewName : "vicaraapp.ProjMgrHrReporting",
 		type : sap.ui.core.mvc.ViewType.JS
 	});
 	
 	var UserRegistration = sap.ui.view({
-		id : "UserRegistration1",
+		id : "userRegistration1",
 		viewName : "vicaraapp.UserRegistration",
 		type : sap.ui.core.mvc.ViewType.JS
 	});
@@ -71,6 +83,8 @@
 	app.addPage(adminMaintainUser);
 	app.addPage(ProjMgrHrReporting);
 	app.addPage(UserRegistration);
+	app.addPage(adminMaintainProjectMaster);
+	app.addPage(ProjectMasterRegistration);
 	app.placeAt("content");
 </script>
 

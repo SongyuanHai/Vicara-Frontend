@@ -36,7 +36,8 @@ sap.ui.jsview("vicaraapp.AdminHome", {
 				"idAdminMaintainProjectMaster", {
 					title : "Maintain/Edit Project Master",
 					info : "Admin",
-					icon : "sap-icon://work-history"
+					icon : "sap-icon://work-history",
+					press : [ oController.gotoAdminMaintainProjectMaster, oController ],
 				});
 
 		var oStandardTile3 = new sap.m.StandardTile(
@@ -47,10 +48,9 @@ sap.ui.jsview("vicaraapp.AdminHome", {
 				});
 
 		// Create tileContainer and add tiles
-		var oTileContainer = new sap.m.TileContainer(
-				"idAdminTileContainer", {
-					tiles : [ oStandardTile1, oStandardTile2, oStandardTile3, ]
-				});
+		var oTileContainer = new sap.m.TileContainer("idAdminTileContainer", {
+			tiles : [ oStandardTile1, oStandardTile2, oStandardTile3, ]
+		});
 
 		// Create logout button
 		var oLogoutButton = new sap.m.Button({

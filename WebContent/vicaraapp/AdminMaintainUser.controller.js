@@ -50,7 +50,7 @@ sap.ui.controller("vicaraapp.AdminMaintainUser", {
 	
 	// Go to user registration page
 	gotoUserRegistration : function(oEvt) {
-		app.to("UserRegistration1");
+		app.to("userRegistration1");
 	},
 /**
 * Called when the Controller is destroyed. Use this one to free resources and finalize activities.

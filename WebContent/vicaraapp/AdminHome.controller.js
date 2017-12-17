@@ -31,16 +31,15 @@ sap.ui.controller("vicaraapp.AdminHome", {
 		location.reload();
 	},
 	
-	// Go to user registration page
-	gotoUserRegistration : function(oEvt) {
-		app.to("UserRegistration1");
-	},
-	
 	// Go to AdminMaintainUser page
 	gotoAdminMaintainUser : function(oEvt) {
 		app.to("adminMaintainUser1");
 	},
 	
+	// Go to AdminMaintainProjectMaster page
+	gotoAdminMaintainProjectMaster : function(oEvt) {
+		app.to("adminMaintainProjectMaster1");
+	},
 /**
 * Called when the View has been rendered (so its HTML is part of the document). Post-rendering manipulations of the HTML could be done here.
 * This hook is the same one that SAPUI5 controls get after being rendered.

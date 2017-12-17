@@ -40,7 +40,7 @@ sap.ui.controller("vicaraapp.ProjectManagerHome", {
 	},
 	
 	goToHourReporting : function(oEvt) {
-		app.to("ProjMgrHrReporting1");
+		app.to("projMgrHrReporting1");
 	},
 
 /**

@@ -122,7 +122,7 @@ sap.ui.jsview("vicaraapp.AdminMaintainUser", {
 		oTable.bindRows("table_adminMaintainUser>/");
 
 		var oPage = new sap.m.Page({
-			title : "User Maintainance",
+			title : "User Maintenance",
 			showNavButton : true,
 			navButtonPress : function(oEvt) {
 				app.back();
