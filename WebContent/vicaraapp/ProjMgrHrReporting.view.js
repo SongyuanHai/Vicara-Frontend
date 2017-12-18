@@ -141,13 +141,20 @@ sap.ui.jsview("vicaraapp.ProjMgrHrReporting", {
 
 		oTable.bindRows("table_projMgrHrRep>/");
 
+//		var oRefreshButton = new sap.m.Button({
+//			text : "Refresh",
+//			icon : "sap-icon://refresh",
+//			press : [ oController.onUserDataReceived, oController ]
+//		});
+		
 		var oPage = new sap.m.Page({
-			title : "Project Manager Hour Reporting",
+			title : "Hour Reporting Page",
 			showNavButton : true,
 			navButtonPress : function(oEvt) {
 				app.back();
 			},
-			content : [ oTable ]
+			content : [ oTable ],
+//			headerContent : [oRefreshButton,],
 		});
 
 		return oPage;

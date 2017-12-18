@@ -10,35 +10,6 @@ sap.ui.controller("vicaraapp.vicaraApp", {
 	 */
 	onInit : function() {
 
-		// Odata (Json) data, which will retrieve from back-end
-		// in real app
-		// var oData = {
-		// "names" : [ {
-		// id : 1,
-		// Name : "Songyuan",
-		// Password : "1234",
-		// Role : "ProjectMember"
-		// }, {
-		// id : 2,
-		// Name : "Ram",
-		// Password : "1234",
-		// Role : "ProjectManager"
-		// }, {
-		// id : 3,
-		// Name : "Ronny",
-		// Password : "1234",
-		// Role : "ConsultingManager"
-		// }, {
-		// id : 4,
-		// Name : "Jingyi",
-		// Password : "1234",
-		// Role : "ProjectMember"
-		// }, ]
-		// };
-		//
-		// var oModel = new sap.ui.model.json.JSONModel(oData);
-		// sap.ui.getCore().setModel(oModel);
-
 	},
 	/**
 	 * Similar to onAfterRendering, but this hook is invoked before the
@@ -163,10 +134,16 @@ sap.ui.controller("vicaraapp.vicaraApp", {
 			var oLabel = sap.ui.getCore().byId("idUserName_projectMember");
 			oLabel.setText(oInputName);
 			app.to("projectMemberHome1");
+			var eventBus = sap.ui.getCore().getEventBus();
+			// 1. ChannelName, 2. EventName, 3. the data
+			eventBus.publish("HomeProjectManagerChannel", "onNavigateEvent", oAccount);
 		} else if (oAccount.role === "Project Manager") {
 			var oLabel = sap.ui.getCore().byId("idUserName_projectManager");
 			oLabel.setText(oInputName);
 			app.to("projectManagerHome1");
+			var eventBus = sap.ui.getCore().getEventBus();
+			// 1. ChannelName, 2. EventName, 3. the data
+			eventBus.publish("HomeProjectManagerChannel", "onNavigateEvent", oAccount);
 		} else if (oAccount.role === "Consulting Manager") {
 			var oLabel = sap.ui.getCore().byId("idUserName_ConsutingManager");
 			oLabel.setText(oInputName);

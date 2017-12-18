@@ -29,14 +29,16 @@ sap.ui.jsview("vicaraapp.ProjectMemberHome", {
 				"idProjectMemberHourRecording", {
 					title : "Hour Recording",
 					info : "Project Member",
-					icon : "sap-icon://timesheet"
+					icon : "sap-icon://timesheet",
+					press : [ oController.goToHourRecording, oController ],
 				});
 
 		var oStandardTile2 = new sap.m.StandardTile(
 				"idProjectMemberHourReporting", {
 					title : "Hour Reporting",
 					info : "Project Member",
-					icon : "sap-icon://work-history"
+					icon : "sap-icon://work-history",
+					press : [ oController.goToHourReporting, oController ],
 				});
 
 		var oStandardTile3 = new sap.m.StandardTile(

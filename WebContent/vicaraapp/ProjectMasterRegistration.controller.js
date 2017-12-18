@@ -60,30 +60,14 @@ sap.ui.controller("vicaraapp.ProjectMasterRegistration",
 						// crossDomain : true,
 						success : function(data, textStatus, jqXHR) {
 							sap.m.MessageToast.show("Create success!");
-//							var oFirstName = sap.ui.getCore().byId(
-//									"idFirstNameInput");
-//							var oMiddleName = sap.ui.getCore().byId(
-//									"idMiddleNameInput");
-//							var oLastName = sap.ui.getCore().byId(
-//									"idLastNameInput");
-//							var oEmployeeID = sap.ui.getCore().byId(
-//									"idEmployeeIDInput");
-//							var oEmail1 = sap.ui.getCore()
-//									.byId("idEmail1Input");
-//							var oEmail2 = sap.ui.getCore()
-//									.byId("idEmail2Input");
-//							var oPassword1 = sap.ui.getCore().byId(
-//									"idPassword1Input");
-//							var oPassword2 = sap.ui.getCore().byId(
-//									"idPassword2Input");
-//							oFirstName.setValue();
-//							oMiddleName.setValue();
-//							oLastName.setValue();
-//							oEmployeeID.setValue();
-//							oEmail1.setValue();
-//							oEmail2.setValue();
-//							oPassword1.setValue();
-//							oEmail2.setValue();
+							sap.ui.getCore().byId("idPspElementInput")
+									.setValue();
+							sap.ui.getCore().byId(
+									"idProjectNameInput").setValue();
+							sap.ui.getCore().byId(
+									"idProjectStartDatePicker").setValue();
+							sap.ui.getCore().byId(
+									"idProjectEndDatePicker").setValue();
 							app.back();
 							console.log(data);
 							console.log(textStatus);

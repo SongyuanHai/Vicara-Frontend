@@ -27,7 +27,8 @@ sap.ui.jsview("vicaraapp.ProjectManagerHome", {
 				"idProjectManagerHourRecording", {
 					title : "Hour Recording",
 					info : "Project Manager",
-					icon : "sap-icon://timesheet"
+					icon : "sap-icon://timesheet",
+					press : [ oController.goToHourRecording, oController ],
 				});
 
 		var oStandardTile2 = new sap.m.StandardTile(

@@ -35,6 +35,14 @@ sap.ui.controller("vicaraapp.ProjectMemberHome", {
 		app.to("login1");
 		location.reload();
 	},
+	
+	goToHourReporting : function(oEvt) {
+		app.to("projMgrHrReporting1");
+	},
+	
+	goToHourRecording : function(oEvt) {
+		app.to("hourRecording1");
+	},
 
 /**
  * Called when the View has been rendered (so its HTML is part of the document).

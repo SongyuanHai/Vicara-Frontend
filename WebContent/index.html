@@ -74,6 +74,12 @@
 		type : sap.ui.core.mvc.ViewType.JS
 	});
 
+	var HourRecording = sap.ui.view({
+		id : "hourRecording1",
+		viewName : "vicaraapp.HourRecording",
+		type : sap.ui.core.mvc.ViewType.JS
+	});
+	
 	
 	app.addPage(loginPage);
 	app.addPage(projectMemberHome);
@@ -85,6 +91,7 @@
 	app.addPage(UserRegistration);
 	app.addPage(adminMaintainProjectMaster);
 	app.addPage(ProjectMasterRegistration);
+	app.addPage(HourRecording);
 	app.placeAt("content");
 </script>
 
