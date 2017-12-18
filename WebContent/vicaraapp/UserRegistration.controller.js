@@ -89,7 +89,7 @@ sap.ui.controller("vicaraapp.UserRegistration",
 							oEmail1.setValue();
 							oEmail2.setValue();
 							oPassword1.setValue();
-							oEmail2.setValue();
+							oPassword1.setValue();
 							app.back();
 							console.log(data);
 							console.log(textStatus);

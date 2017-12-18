@@ -44,7 +44,8 @@ sap.ui.jsview("vicaraapp.AdminHome", {
 				"idAdminMaintainProjectAssignment", {
 					title : "Maintain/Edit Project Assignment",
 					info : "Admin",
-					icon : "sap-icon://workflow-tasks"
+					icon : "sap-icon://workflow-tasks",
+					press : [ oController.gotoAdminMaintainProjectAssignment, oController ],			
 				});
 
 		// Create tileContainer and add tiles

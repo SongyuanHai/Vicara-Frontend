@@ -141,9 +141,12 @@ sap.ui.controller("vicaraapp.vicaraApp", {
 			var oLabel = sap.ui.getCore().byId("idUserName_projectManager");
 			oLabel.setText(oInputName);
 			app.to("projectManagerHome1");
-			var eventBus = sap.ui.getCore().getEventBus();
+			var eventBus1 = sap.ui.getCore().getEventBus();
 			// 1. ChannelName, 2. EventName, 3. the data
-			eventBus.publish("HomeProjectManagerChannel", "onNavigateEvent", oAccount);
+			eventBus1.publish("HomeProjectManagerChannel", "onNavigateEvent", oAccount);
+			var eventBus2 = sap.ui.getCore().getEventBus();
+			// 1. ChannelName, 2. EventName, 3. the data
+			eventBus2.publish("HomeProjectManagerHourApprovalChannel", "onNavigateEvent", oAccount);
 		} else if (oAccount.role === "Consulting Manager") {
 			var oLabel = sap.ui.getCore().byId("idUserName_ConsutingManager");
 			oLabel.setText(oInputName);

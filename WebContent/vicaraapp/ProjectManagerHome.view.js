@@ -36,7 +36,7 @@ sap.ui.jsview("vicaraapp.ProjectManagerHome", {
 					title : "Hour Reporting",
 					info : "Project Manager",
 					icon : "sap-icon://work-history",
-					press : [ oController.goToHourReporting, oController ]
+					press : [ oController.goToHourReporting, oController ],
 				});
 
 		var oStandardTile3 = new sap.m.StandardTile(
@@ -57,7 +57,8 @@ sap.ui.jsview("vicaraapp.ProjectManagerHome", {
 				"idProjectManagerHourApproval", {
 					title : "Hour Approval",
 					info : "Project Manager",
-					icon : "sap-icon://approvals"
+					icon : "sap-icon://approvals",
+					press : [ oController.goToHourApproval, oController ],
 				});
 
 		var oTileContainer = new sap.m.TileContainer(

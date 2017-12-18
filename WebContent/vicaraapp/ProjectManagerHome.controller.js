@@ -46,6 +46,10 @@ sap.ui.controller("vicaraapp.ProjectManagerHome", {
 	goToHourRecording : function(oEvt) {
 		app.to("hourRecording1");
 	},
+	goToHourApproval : function(oEvt) {
+		app.to("projMgrHrApproval1");
+	},
+	
 
 /**
  * Called when the View has been rendered (so its HTML is part of the document).

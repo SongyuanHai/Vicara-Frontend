@@ -56,6 +56,12 @@
 		type : sap.ui.core.mvc.ViewType.JS
 	});
 	
+	var adminMaintainProjectAssignment = sap.ui.view({
+		id : "adminMaintainProjectAssignment1",
+		viewName : "vicaraapp.AdminMaintainProjAssign",
+		type : sap.ui.core.mvc.ViewType.JS
+	});
+	
 	var ProjectMasterRegistration = sap.ui.view({
 		id : "projectMasterRegistration1",
 		viewName : "vicaraapp.ProjectMasterRegistration",
@@ -65,6 +71,12 @@
 	var ProjMgrHrReporting = sap.ui.view({
 		id : "projMgrHrReporting1",
 		viewName : "vicaraapp.ProjMgrHrReporting",
+		type : sap.ui.core.mvc.ViewType.JS
+	});
+	
+	var ProjMgrHrApproval = sap.ui.view({
+		id : "projMgrHrApproval1",
+		viewName : "vicaraapp.ProjMgrHrApproval",
 		type : sap.ui.core.mvc.ViewType.JS
 	});
 	
@@ -92,6 +104,9 @@
 	app.addPage(adminMaintainProjectMaster);
 	app.addPage(ProjectMasterRegistration);
 	app.addPage(HourRecording);
+	app.addPage(ProjMgrHrApproval);
+	app.addPage(adminMaintainProjectAssignment);
+	
 	app.placeAt("content");
 </script>
 
